@@ -45,7 +45,7 @@ def search_contact(index_contact = None, case_search = 0, var_search = ''):
     with open('phonebook.txt', 'r', encoding='utf-8') as file:
         contacts_str = file.read()
         contacts_list = contacts_str.rstrip().split('\n\n')
-    if index_contact != '':                     # если задан список номеров строк для копирования
+    if index_contact != 0:                     # если задан список номеров строк для копирования
         for i in index_contact:                     # перебираем список по нужным строкам
             copy_contact(contacts_list[int(i)-1])   # копируем выбранные пользователем контакты
     if case_search != 0:                            # Если пользователь ищет по атрибуту
